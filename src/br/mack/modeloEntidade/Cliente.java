@@ -24,7 +24,7 @@ public class Cliente {
     public void setEmail(String email) {this.email = email;}
     public void setTelefone(String tel) {telefone = tel;}
     public void setLogin(int log) {login = log;}
-    private void setSenha(int password) {senha = password;}
+    public void setSenha(int password) {senha = password;}
     public void setStatus(boolean state) {status = state;}
     
     public boolean getStatus() {

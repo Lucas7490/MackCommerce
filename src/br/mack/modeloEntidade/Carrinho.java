@@ -9,6 +9,9 @@ import br.mack.dao.ProdutoDAO;
 public class Carrinho {
     private int identificador;
     
+    //Set
+    public void setID(int id) {identificador = id;}
+    
     //public <<TYPE>> comprarBoleto()
     //public <<TYPE>> comprarDebito()
     //public <<TYPE>> comprarPayPal()

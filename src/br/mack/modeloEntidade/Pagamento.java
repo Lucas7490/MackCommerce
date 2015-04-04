@@ -1,6 +1,6 @@
 package br.mack.modeloEntidade;
 
-import java.util.GregorianCalendar;
+import java.sql.Date;
 
 /**
  *
@@ -8,6 +8,11 @@ import java.util.GregorianCalendar;
  */
 public class Pagamento {
     public int identificador;
-    public GregorianCalendar data;
+    public Date data;
     public double valor;
+    
+    //Set
+    public void setID(int id) {identificador = id;}
+    public void setData(Date date) {data = date;}
+    public void setValor(double val) {valor = val;}
 }
