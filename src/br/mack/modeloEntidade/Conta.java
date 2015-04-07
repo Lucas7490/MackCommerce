@@ -6,4 +6,8 @@ package br.mack.modeloEntidade;
  */
 public class Conta {
     private long identificador;
+    //Get
+    public long getID() {return identificador;}
+    //Set
+    public void setID(long id) {identificador = id;}
 }

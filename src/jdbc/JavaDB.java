@@ -28,7 +28,7 @@ public class JavaDB extends DataSource{
         return jDataSource.getConnection(DB_USER, DB_PASS);
     }
     @Override
-    public Connection getConnection (String db_user, String db_pass) {
+    protected Connection getConnection (String db_user, String db_pass) {
         try {
             conn = DriverManager.getConnection("jdbc:derby://"+DB_SERVER+"/"
             +DB_NAME+"/"+db_pass+","+db_pass);
@@ -38,19 +38,20 @@ public class JavaDB extends DataSource{
         }
     }
     @Override
-    public void prepare(String sql) {
+    public PreparedStatement prepare(String sql) {
         try {
-            stm = conn.prepareStatement(sql);
+            return stm = conn.prepareStatement(sql);
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(JavaDB.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();            
         }
+        return null;
     }
     @Override
-    public void closeStatement(PreparedStatement stm) throws SQLException {
+    public void closeStatement() throws SQLException {
         stm.close();
     }
     @Override
-    public void closeConnection(Connection conn) throws SQLException {
+    public void closeConnection() throws SQLException {
         conn.close();
     }
 }
