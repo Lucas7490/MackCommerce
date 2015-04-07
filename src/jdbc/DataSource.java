@@ -16,8 +16,8 @@ public abstract class DataSource {
     protected static String DB_PASS = "UNDEFINED";
     
     public abstract Connection getConnection();
-    protected abstract Connection getConnection (String db_user, String db_pass);
-    public abstract PreparedStatement prepare(String sql);
-    public abstract void closeStatement() throws SQLException;
-    public abstract void closeConnection() throws SQLException;
+    public abstract Connection getConnection (String db_user, String db_pass);
+    public abstract void prepare(String sql);
+    public abstract void closeStatement(PreparedStatement stm) throws SQLException;
+    public abstract void closeConnection(Connection conn) throws SQLException;
 }
